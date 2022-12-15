@@ -21,19 +21,21 @@
 </head>
 
 <body class="antialiased">
-<main class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0"">
-        <form action="" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
+<main class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <form action="{{route('salvar')}}" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
             <div class="form-group mb-4" >
                 <label for="name-input">Nome:</label>
-                <input class="form-control" form="edita-aluno" id="name-input" name="name-input" type="text" placeholder="Digite o nome do aluno">
+                <input class="form-control" form="edita-aluno" id="name-input" name="name_input" type="text" placeholder="Digite o nome do aluno">
             </div>
 
             <div class="form-group mb-4" >
                 <label for="matricula-input">Matricula:</label>
-                <input class="form-control" form="edita-aluno" id="matricula-input" name="matricula-input" type="text" placeholder="Digite o numero de matricula">
+                <input class="form-control" form="edita-aluno" id="matricula-input" name="matricula_input" type="text" placeholder="Digite o numero de matricula">
             </div>
 
-            <button class="btn btn-primary" form="edita-aluno" >Salvar</button>
+            {{$mensagem??""}}
+
+            <input type="submit" value="salvar" class="btn btn-primary" form="edita-aluno" />
         </form>
     </main>
 </body>
