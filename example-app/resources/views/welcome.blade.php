@@ -15,9 +15,8 @@
         </style>
 
         <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
+            body {font-family: 'Nunito', sans-serif;}
+            .text-light{color: white}
         </style>
     </head>
     <body class="antialiased">
@@ -125,6 +124,9 @@
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
+                </div>
+                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                    <h1 class="text-light">Veia Alunos</h1>
                 </div>
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-3">
