@@ -22,4 +22,9 @@ class AlunoController extends Controller
     {
         return view("ver");
     }
+    public function salvar(Request $request){
+        return view('incluir', [
+            "mensagem" => "Salvo com sucesso"
+        ]);
+    }
 }
