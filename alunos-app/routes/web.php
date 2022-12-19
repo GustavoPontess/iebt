@@ -22,3 +22,5 @@ Route::get('/editar', "App\Http\Controllers\UsersController@editar")->name('edit
 Route::get('/ver', "App\Http\Controllers\UsersController@ver")->name('ver');
 Route::get('/apagar', "App\Http\Controllers\UsersController@apagar")->name('apagar');
 Route::get('/salvar', "App\Http\Controllers\UsersController@salvar")->name('salvar');
+
+//Router::resource('posts', 'UsersController'); //??
