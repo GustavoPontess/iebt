@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/incluir', "App\Http\Controllers\AlunoController@incluir");
-Route::get('/editar', "App\Http\Controllers\AlunoController@editar");
+Route::get('/editar/{id}', "App\Http\Controllers\AlunoController@editar");
 Route::get('/ver', "App\Http\Controllers\AlunoController@ver");
-Route::get('/apagar', "App\Http\Controllers\AlunoController@apagar");
-
+Route::get('/apagar/{id}', "App\Http\Controllers\AlunoController@apagar");
+Route::get('/salvar', "App\Http\Controllers\AlunoController@salvar")->name('salvar');
+Route::get('/alterar', "App\Http\Controllers\AlunoController@alterar")->name('alterar');

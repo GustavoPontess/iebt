@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel - incluir</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,7 +23,7 @@
 
 <body class="antialiased">
 <main class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0"">
-        <form action="" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
+        <form action="{{route('salvar')}}" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
             <div class="form-group mb-4" >
                 <label for="name-input">Nome:</label>
                 <input class="form-control" form="edita-aluno" id="name-input" name="name-input" type="text" placeholder="Digite o nome do aluno">
@@ -33,6 +34,10 @@
                 <input class="form-control" form="edita-aluno" id="matricula-input" name="matricula-input" type="text" placeholder="Digite o numero de matricula">
             </div>
 
+            <div class="form-group mb-4">
+                <h1>{{$mensagem ?? ""}}</h1>
+            </div>
+            
             <button class="btn btn-primary" form="edita-aluno" >Salvar</button>
         </form>
     </main>

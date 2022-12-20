@@ -18,15 +18,22 @@
 </head>
 <body>
     <main class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0"">
-        <form action="" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
+        <form action="{{route('alterar')}}" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
+            
+            <input class="form-control" form="edita-aluno" id="id-input" name="id-input" type="text" value="{{$id}}" style="display:none;">
+
             <div class="form-group mb-4" >
-                <label for="name-input">Nome:</label>
-                <input class="form-control" form="edita-aluno" id="name-input" name="name-input" type="text" value="Pedro Vitor">
+                <label for="name-input">Nome: </label>
+                <input class="form-control" form="edita-aluno" id="name-input" name="name-input" type="text" value="{{$name}}">
             </div>
 
             <div class="form-group mb-4" >
                 <label for="matricula-input">Matricula:</label>
-                <input class="form-control" form="edita-aluno" id="matricula-input" name="matricula-input" type="text" value="1314">
+                <input class="form-control" form="edita-aluno" id="matricula-input" name="matricula-input" type="text" value="{{$matricula}}">
+            </div>
+
+            <div class="form-group mb-4">
+                <h1>{{$mensagem ?? ""}}</h1>
             </div>
 
             <button class="btn btn-primary" form="edita-aluno" >Editar</button>

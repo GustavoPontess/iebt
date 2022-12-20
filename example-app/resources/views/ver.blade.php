@@ -42,24 +42,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Gustavo</td>
-                        <td>788558</td>
-                        <td class="text-center">
-                            <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>122544</td>
-                        <td class="text-center">
-                            <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    @foreach($students as $student)
+                        <tr>
+                            <th scope="row">{{$student->id}}</th>
+                            <td>{{$student->name}}</td>
+                            <td>{{$student->matricula}}</td>
+                            <td class="text-center">
+                                <a href="{{ url('/editar/'.$student->id) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <a href="{{ url('/apagar/'.$student->id) }}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
