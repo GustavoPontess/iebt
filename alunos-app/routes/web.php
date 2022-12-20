@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,12 @@ Route::get('/', function () {
 });
 
 Route::get('/incluir', "App\Http\Controllers\UsersController@incluir")->name('incluir');
-Route::get('/editar', "App\Http\Controllers\UsersController@editar")->name('editar');
+Route::get('/editar/{matricula}/{name}', "App\Http\Controllers\UsersController@editar")->name('editar');
 Route::get('/ver', "App\Http\Controllers\UsersController@ver")->name('ver');
-Route::get('/apagar', "App\Http\Controllers\UsersController@apagar")->name('apagar');
-Route::get('/salvar', "App\Http\Controllers\UsersController@salvar")->name('salvar');
+Route::get('/apagar/{matricula}', "App\Http\Controllers\UsersController@apagar")->name('apagar');
 
-//Router::resource('posts', 'UsersController'); //??
+Route::get('/salvar', "App\Http\Controllers\UsersController@salvar")->name('salvar');
+Route::get('/alterar', "App\Http\Controllers\UsersController@alterar")->name('alterar');
+
+
+Route::resource('posts', UsersController::class); //??
