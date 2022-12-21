@@ -65,9 +65,9 @@ class AlunoController extends Controller
      */
     public function editar(int $id):View
     {
-        $student = Student::findOrFail($id);
+        $student = Student::find($id);
 
-        return view("editar", ['id' => $student->id, 'name' => $student->name, 'matricula' => $student->matricula]);
+        return view("editar", ['student' => $student]);
     }
 
     /**

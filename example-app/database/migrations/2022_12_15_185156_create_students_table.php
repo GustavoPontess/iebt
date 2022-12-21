@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         // dropping tables created automatically by laravel
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_resets');
-        Schema::dropIfExists('failed_jobs');
-        Schema::dropIfExists('personal_access_tokens');
+        // Schema::dropIfExists('users');
+        // Schema::dropIfExists('password_resets');
+        // Schema::dropIfExists('failed_jobs');
+        // Schema::dropIfExists('personal_access_tokens');
 
         // creating students table
         Schema::create('students', function (Blueprint $table) {
