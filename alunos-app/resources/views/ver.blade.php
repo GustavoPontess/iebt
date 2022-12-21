@@ -20,30 +20,17 @@
                     <tbody>
                         @if (count($results2))
                             <?php $cont = 0 ?>
-                            {{-- este foreache so ira funcionar quando usado com o metodo ver que esta comentado
-                                pois retorna um vetor de nome de alunos --}}
                             @foreach ($results2 as $aluno)
                                 <tr>
                                     <th scope="row">{{$cont++}}</th>
                                     <td>{{ $aluno->name }}</td>
                                     <td>{{ $aluno->matricula }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('/editar/'. $aluno->matricula.'/'.$aluno->name) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="{{ url('/apagar/'. $aluno->matricula)}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                        <a href="{{ url('/editSpecific/'. $aluno->matricula.'/'.$aluno->name) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="{{ url('/destroy/'. $aluno->matricula)}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
-                            {{-- @for ($i = 0; $i < sizeof($results); $i++)
-                            <tr>
-                                <th scope="row">{{$i}}</th>
-                                <td>{{$results[$i]->name}}</td>
-                                <td>{{$results[$i]->matricula}}</td>
-                                <td class="text-center">
-                                    <a href="{{ url('/editar/'. $results[$i]->matricula) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                    <a href="{{ url('/apagar/'. $results[$i]->matricula)}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                </td>
-                            </tr>
-                            @endfor --}}
                         @else
                             <tr>
                                 <th scope="row" colspan="4" class="text-center text-danger">Nenhum aluno cadastrado</th>

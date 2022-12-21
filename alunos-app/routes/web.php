@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use Illuminate\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/incluir', "App\Http\Controllers\UsersController@incluir")->name('incluir');
-Route::get('/editar/{matricula}/{name}', "App\Http\Controllers\UsersController@editar")->name('editar');
-Route::get('/ver', "App\Http\Controllers\UsersController@ver")->name('ver');
-Route::get('/apagar/{matricula}', "App\Http\Controllers\UsersController@apagar")->name('apagar');
+Route::get('/create', "App\Http\Controllers\UsersController@create")->name('create');
+Route::get('/store', "App\Http\Controllers\UsersController@store")->name('store');
+Route::get('/index', "App\Http\Controllers\UsersController@index")->name('index');
+Route::get('/editSpecific/{matricula}/{name}', "App\Http\Controllers\UsersController@editSpecific")->name('editSpecific');
+Route::get('/update', "App\Http\Controllers\UsersController@update")->name('update');
+Route::get('/destroy/{matricula}', "App\Http\Controllers\UsersController@destroy")->name('destroy');
+Route::get('/edit', "App\Http\Controllers\UsersController@edit")->name('edit');
 
-Route::get('/salvar', "App\Http\Controllers\UsersController@salvar")->name('salvar');
-Route::get('/alterar', "App\Http\Controllers\UsersController@alterar")->name('alterar');
 
 
-Route::resource('posts', UsersController::class); //??
+//Route::resource('alunos', UsersController::class); //??

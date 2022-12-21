@@ -4,7 +4,7 @@
 
     <body class="antialiased">
         <main class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <form action="{{ route('salvar') }}" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
+            <form action="{{ route('store') }}" id="edita-aluno" class="text-white d-flex flex-column justify-content-between ">
                 <div class="form-group mb-4">
                     <label for="name-input">Nome:</label>
                     <input class="form-control" form="edita-aluno" id="name_input" name="name_input" type="text"
