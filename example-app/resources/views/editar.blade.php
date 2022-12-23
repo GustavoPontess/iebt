@@ -24,12 +24,12 @@
 
             <div class="form-group mb-4" >
                 <label for="name-input">Nome: </label>
-                <input class="form-control" form="edita-aluno" id="name-input" name="name-input" type="text" value="{{$student->name}}">
+                <input pattern="[A-Za-z].{2,}" title="O nome deve conter a penas letras" class="form-control" form="edita-aluno" id="name-input" name="name-input" type="text" value="{{$student->name}}">
             </div>
 
             <div class="form-group mb-4" >
                 <label for="matricula-input">Matricula:</label>
-                <input class="form-control" form="edita-aluno" id="matricula-input" name="matricula-input" type="text" value="{{$student->matricula}}">
+                <input pattern="[0-9]{8}" title="A matricula deve ter 8 dígitos" class="form-control" form="edita-aluno" id="matricula-input" name="matricula-input" type="text" value="{{$student->matricula}}">
             </div>
 
             <div class="form-group mb-4">
