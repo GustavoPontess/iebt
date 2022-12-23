@@ -42,5 +42,3 @@
         </form>
     </main>
 </body>
-
-</html>
