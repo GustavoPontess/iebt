@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "cd9e7b338709ebe174942dd76fa88d79",
+=======
+    "content-hash": "e2d937d6ac93b533c7859af8978628d6",
+>>>>>>> 83470354ad4d0b126e7bddd0479087e2350c9454
     "packages": [
         {
             "name": "brackets/admin-auth",
@@ -3827,6 +3831,7 @@
         },
         {
             "name": "psr/simple-cache",
+<<<<<<< HEAD
             "version": "1.0.0",
             "source": {
                 "type": "git",
@@ -3841,11 +3846,31 @@
             },
             "require": {
                 "php": ">=5.3.0"
+=======
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "8707bf3cea6f710bf6ef05491234e3ab06f6432a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/8707bf3cea6f710bf6ef05491234e3ab06f6432a",
+                "reference": "8707bf3cea6f710bf6ef05491234e3ab06f6432a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+>>>>>>> 83470354ad4d0b126e7bddd0479087e2350c9454
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
                     "dev-master": "1.0.x-dev"
+=======
+                    "dev-master": "2.0.x-dev"
+>>>>>>> 83470354ad4d0b126e7bddd0479087e2350c9454
                 }
             },
             "autoload": {
@@ -3860,7 +3885,11 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
+<<<<<<< HEAD
                     "homepage": "http://www.php-fig.org/"
+=======
+                    "homepage": "https://www.php-fig.org/"
+>>>>>>> 83470354ad4d0b126e7bddd0479087e2350c9454
                 }
             ],
             "description": "Common interfaces for simple caching",
@@ -3872,9 +3901,15 @@
                 "simple-cache"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/php-fig/simple-cache/tree/1.0.0"
             },
             "time": "2017-01-02T13:31:39+00:00"
+=======
+                "source": "https://github.com/php-fig/simple-cache/tree/2.0.0"
+            },
+            "time": "2021-10-29T13:22:09+00:00"
+>>>>>>> 83470354ad4d0b126e7bddd0479087e2350c9454
         },
         {
             "name": "psy/psysh",
