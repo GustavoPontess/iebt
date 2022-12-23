@@ -9,6 +9,9 @@ use App\Models\Aluno;
 class UsersController extends Controller
 {
     /**
+     *  Eloquente
+     */
+    /**
      * Display a listing of the resource.
      * Exibir uma listagem do recurso.
      *
@@ -17,8 +20,9 @@ class UsersController extends Controller
     public function index()
     {
         //
-        $results2 = Aluno::all(); //mapeamento obijeto relaciona ORM
-        return view('ver', compact('results2'));
+        $results = Aluno::withTrashed()->get(); //mapeamento obijeto relaciona ORM
+        
+        return view('ver', compact('results'));
     }
 
     /**
@@ -43,13 +47,11 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         //
-        $aluno = new Aluno;
-        $aluno->name = $request["name_input"];
+        $aluno = new Aluno; // Ao instaciar a model de alunos temos acesso a cada propriedade ou coluna da nossa tabela
+        $aluno->name = $request["name_input"]; // Desta forma obtemos a propriedade e atribuimos um valor a ela
         $aluno->matricula = $request["matricula_input"];
-        $aluno->save();
-        return view('incluir', [
-            "mensagem" => "Aluno: {$request["name_input"]}, salvo com sucesso!"
-        ]);
+        $aluno->save(); // entao chamamos o metodo save
+        return view('incluir', [ "mensagem" => "Aluno: {$request["name_input"]}, salvo com sucesso!" ]);
     }
 
     /**
@@ -123,8 +125,9 @@ class UsersController extends Controller
     public function destroy(int $matricula)
     {
         //
-        $aluno = Aluno::where('matricula', $matricula);
-        $aluno->delete();
+        // $aluno = Aluno::where('matricula', $matricula);
+        // $aluno->delete();
+        Aluno::where('matricula', $matricula)->delete();
         return back();
     }
 }

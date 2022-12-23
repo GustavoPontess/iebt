@@ -14,21 +14,34 @@
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Matricula</th>
+                            <th scope="col">Criado</th>
+                            <th scope="col">Atualizado</th>
+                            <th scope="col">Status</th>
                             <th scope="col" class="text-center">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if (count($results2))
-                            <?php $cont = 0 ?>
-                            @foreach ($results2 as $aluno)
+                        @if (count($results))
+                            @foreach ($results as $aluno)
                                 <tr>
-                                    <th scope="row">{{$cont++}}</th>
+                                    <th scope="row">{{$aluno->id}}</th>
                                     <td>{{ $aluno->name }}</td>
                                     <td>{{ $aluno->matricula }}</td>
+                                    <td>{{ $aluno->created_at}}</td>
+                                    <td>{{ $aluno->updated_at}}</td>
+                                    @if ($aluno->deleted_at == null)
+                                    <td>Ativo</td>
                                     <td class="text-center">
-                                        <a href="{{ url('/editSpecific/'. $aluno->matricula.'/'.$aluno->name) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="{{ url('/destroy/'. $aluno->matricula)}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                        <a href="{{ url('/editSpecific/'. $aluno->matricula.'/'.$aluno->name) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Alterar</a>
+                                        <a href="{{ url('/destroy/'. $aluno->matricula)}}" class="btn btn-danger"><i class="bi bi-x-lg"></i> Desativar</a>
                                     </td>
+                                    @else
+                                    <td>Inativo</td>
+                                    <td class="text-center">
+                                        <a href="{{ url('#')}}" class="btn btn-success"><i class="bi bi-check2"></i> Ativar</a>
+                                        <a href="{{ url('#')}}" class="btn btn-danger"><i class="bi bi-trash"></i> Deletar</a>
+                                    </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         @else
